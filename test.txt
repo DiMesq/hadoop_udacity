@@ -1,0 +1,5 @@
+Lisbon shirt 10
+Porto pants 20
+Porto tennis 14
+Lisbon tennis 25
+Coimbra boots 55
