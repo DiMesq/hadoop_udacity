@@ -16,7 +16,7 @@ def mapper():
       cost = parsed[4]
       if is_float(cost):
         category = parsed[3]
-        print '{}\t{}'.format(category, cost)
+        print '{0}\t{1}'.format(category, cost)
 
 if __name__ == '__main__':
   mapper()
