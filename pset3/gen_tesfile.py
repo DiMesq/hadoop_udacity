@@ -1,14 +1,35 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import random
+import sys
 
 def main():
-  categories = ['tech', 'food', 'suplies', 'garden', 'home']
+  t = sys.argv[1]
+  print t
   n = 200
-  for i in range(n):
-    category = random.choice(categories)
-    cost = random.random() * 100
-    print '0\t1\t2\t{}\t{:.2f}\t5'.format(category, cost)
+
+  if t == '1':
+    categories = ['tech', 'food', 'suplies', 'garden', 'home']
+    for i in range(n):
+      category = random.choice(categories)
+      cost = random.random() * 100
+      print '0\t1\t2\t{}\t{:.2f}\t5'.format(category, cost)
+
+  elif t == '2':
+    categories = ['LA', 'NY', 'Seattle', 'SF', 'Boston']
+    for i in range(n):
+      category = random.choice(categories)
+      cost = random.random() * 100
+      print '0\t1\t{}\t3\t{:.2f}\t5'.format(category, cost)
+
+  elif t == '3':
+    categories = ['tech', 'food', 'suplies', 'garden', 'home']
+    for i in range(n):
+      category = random.choice(categories)
+      cost = random.random() * 100
+      print '0\t1\t2\t{}\t{:.2f}\t5'.format(category, cost)
+  
+  
 
 if __name__ == '__main__':
   main()
