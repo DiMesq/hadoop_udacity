@@ -1,15 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys
-from datetime import datetime
 
 def reducer():
   prev = None
   total = 0
   count = 0
   for line in sys.stdin:
-    date, sales = line.strip().split('\t')
-    this = datetime.strptime(date, "%Y-%m-%d").weekday()
+    weekday, sales = line.strip().split('\t')
+    
     if prev and this != prev:
       print '{0}\t{1}'.format(prev, float(total)/count)
       total=0
