@@ -4,7 +4,7 @@ import sys
 import re
 
 def mapper():
-  domain = re.compile(r'http://www\.(\w|\.)+uk')
+  domain = re.compile(r'^http://www\.(\w|\.)+uk')
   for line in sys.stdin:
     parsed = line.strip().split()
     if len(parsed) == 10:
