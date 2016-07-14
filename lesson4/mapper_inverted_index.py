@@ -9,12 +9,20 @@ def read(delim=','):
   for line in reader:
     yield line
 
+def is_int(s):
+  try:
+    n = int(s)
+    return True
+  except ValueError:
+    return False
+
 def mapper():
-  split_by = re.compile(r'[\s?.;,!:"()<>#$=\[\]\-/]')
+  split_by = re.compile(r'\W+')
   for l in read(delim='\t'):
-    words = split_by.split(l[4])
-    for word in words:
-      print '{0}\t{1}'.format(word.lower(), l[0]) 
+    if len(l) == 19 and is_int(l[0]):
+      words = split_by.split(l[4])
+      for word in words:
+        print '{0}\t{1}'.format(word.lower(), l[0]) 
 
 def create_test(file, delim='\t'):
   with open(file, 'wb') as csvf:
